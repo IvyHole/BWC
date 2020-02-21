@@ -1,0 +1,44 @@
+div.Bwc{
+    display: inline-block;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: solid;
+    border-color: #000000;
+}
+div.bottle{
+    width: 50px;
+    height: 80px;
+    text-align: center;
+    line-height: 0;
+}
+div.bottle_up{
+
+    border-width: 3px 4px 0 4px;
+    border-radius: 10px 10px 5px 5px;
+    width: 38px;
+    height: 20px;
+    background-image: linear-gradient(60deg,#2E86C1, #F4D03F, #E74C3C);
+    background-color: #66ccff;
+}
+span.bottle_up_in{
+    height: 100%;
+    display: block;
+    background-image: linear-gradient(#F8F9F9,#FBFCFC);
+    background-color: #F8F9F9;
+}
+div.bottle_body{
+    border-width: 0 4px 5px 4px;
+    border-radius: 15px 15px 10px 10px;
+    width: 50px;
+    height: 60px;
+    background-image: linear-gradient(60deg,#2E86C1, #F4D03F, #E74C3C);
+    background-color: #66ccff;
+}
+span.bottle_body_in{
+    height: 60%;
+    display: block;
+    background-image: linear-gradient(#F8F9F9,#FBFCFC);
+    background-color: #F8F9F9;
+    border-radius: 0 0 15px 5px;
+}
+
