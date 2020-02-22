@@ -34,30 +34,30 @@
     <div class="text">我们可以自主添加瓶子，你只需要要输入以下name在div中</div>
     <div class="code">&lt;div name="bottle_here">&lt;/div></div>
     <div class="text">如果你需要动态添加，只需要使用js添加以上代码在你要添加的位置，并执行以下代码;我们建议你一次性添加所有位置再运行</div>
-    <div class="code">AddBottle()</div>
+    <div class="code">$().AddBottle()</div>
 </div>
 <div class="container">
     <div class="text">我们支持自主更改瓶子大小</div>
-    <div class="code">ChangeBottleWAndH(width,height)</div>
+    <div class="code">$().ChangeBottleWAndH(width,height)</div>
 </div>
 <div class="container">
     <div class="text">我们支持自主更改瓶子内容量的多少(0-100)</div>
-    <div class="code">ChangeBottleFilled(数量)</div>
+    <div class="code">$().ChangeBottleFilled(数量)</div>
 </div>
 <div class="container">
     <div class="text">如果你想改变<b>边框</b>颜色：</div>
-    <div class="code">ChangeBorderColor("你的颜色代码")</div>
+    <div class="code">$().ChangeBorderColor("你的颜色代码")</div>
 </div>
 <div class="container">
     <div class="text">如果你想改变<b>瓶子</b>颜色。deg是角度参数，渐变角度；颜色是一穿用","相连的颜色代码(渐变颜色数量是输入的颜色代码的多少，最少为2);</div>
-    <div class="code">ChangeBottleUpColor(deg,"颜色") //改变瓶子上部分</div>
-    <div class="code">ChangeBottleBodyColor(deg,"颜色") //改变瓶子主体</div>
-    <div class="code">实例 ChangeBottleUPColor(11,"#66ccff,#505050,#232323")</div>
+    <div class="code">$().ChangeBottleUpColor(deg,"颜色") //改变瓶子上部分</div>
+    <div class="code">$().ChangeBottleBodyColor(deg,"颜色") //改变瓶子主体</div>
+    <div class="code">实例 $().ChangeBottleUPColor(11,"#66ccff,#505050,#232323")</div>
     <div class="text">注意！如果你的浏览器不支持渐变，请将deg参数改为"Null",并使用1种颜色</div>
 </div>
     <div class="container">
         <div class="text">当然我们知道：你想改变全部</div>
-        <div class="code">ChangeAll(border_color,up_deg,up_color,body_deg,body_color,width,height,number)</div>
+        <div class="code">$().ChangeAll(border_color,up_deg,up_color,body_deg,body_color,width,height,number)</div>
 </div>
 </div>
 </body>

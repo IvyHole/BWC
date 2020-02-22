@@ -18,7 +18,7 @@ $(function () {
         .addClass("bottle")
 
 
-    var AddBottle = function(){
+    $.fn.AddBottle = function(){
         var bottles = new Array();
         $("div[name='bottle_here']").each(function(key){
             bottles[key] = $(this);
@@ -46,11 +46,11 @@ $(function () {
         }
     };
 
-    var ChangeBorderColor = function (color) {
+    $.fn.ChangeBorderColor = function (color) {
         $(".Bwc").css("border-color",color);
     }
-    
-    var ChangeBottleUpColor = function (deg,color) {
+
+    $.fn.ChangeBottleUpColor = function (deg,color) {
         if(deg !== "null"){
             $(".bottle_up").css({
                 "background-image":"linear-gradient("+deg+"deg,"+color+")"
@@ -59,7 +59,7 @@ $(function () {
             $(".bottle_up").css("background-color",color);
         }
     };
-    var ChangeBottleBodyColor = function (deg,color) {
+    $.fn.ChangeBottleBodyColor = function (deg,color) {
         if(deg !== "null"){
             $(".bottle_body").css("background-image","linear-gradient("+deg+"deg,"+color+")")
         }else{
@@ -67,7 +67,7 @@ $(function () {
         }
     };
 
-    var ChangeBottleWAndH =function(Iv_width,Iv_height){
+    $.fn.ChangeBottleWAndH =function(Iv_width,Iv_height){
         $(".bottle").css({
             "width":Iv_width,
             "height":Iv_height
@@ -82,7 +82,7 @@ $(function () {
         })
     };
 
-    var ChangeBottleFilled = function(number){
+    $.fn.ChangeBottleFilled = function(number){
 
         if(number>75){
             $(".bottle_body_in").css("height","0%");
@@ -103,11 +103,11 @@ $(function () {
         }
     };
 
-    var ChangeAll = function(border_color,up_deg,up_color,body_deg,body_color,Iv_width,Iv_height,number){
-        ChangeBorderColor(border_color);
-        ChangeBottleUpColor(up_deg,up_color);
-        ChangeBottleBodyColor(body_deg,body_color);
-        ChangeBottleWAndH(Iv_width,Iv_height);
-        ChangeBottleFilled(number);
+    $.fn.ChangeAll = function(border_color,up_deg,up_color,body_deg,body_color,Iv_width,Iv_height,number){
+        $().ChangeBorderColor(border_color);
+        $().ChangeBottleUpColor(up_deg,up_color);
+        $().ChangeBottleBodyColor(body_deg,body_color);
+        $().ChangeBottleWAndH(Iv_width,Iv_height);
+        $().ChangeBottleFilled(number);
     }
 });
