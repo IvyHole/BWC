@@ -46,7 +46,7 @@ $(function () {
             )
             .addClass("Bwc bwc_bottle_body")
         )
-        .addClass("bottle");
+        .addClass("bwc_bottle");
 
 
     $.fn.bwc_AddBottleTo = function(id){
@@ -139,4 +139,49 @@ $(function () {
         $(this).bwc_ChangeBottleWAndH(Iv_width,Iv_height);
         $(this).bwc_ChangeBottleFilled(number);
     }
+
 });
+/*
+$(function () {*/
+//  var rule = /\d*/;
+/*    var switcher;
+    $(".bwc_bottle").dblclick(function () {
+        switcher=$(this);
+        var this_id = $(this).attr("id");
+        var Y = $(this).offset().top;
+        var X = $(this).offset().left;
+
+        var AX=$(document).height();
+        console.log(rule.exec($(this).css("width"))[0]);
+        $(this).append($(document.createElement("div"))
+            .addClass("bwc_change")
+            .css({
+                "left" : X +rule.exec($(this).css("width"))[0] ,
+                "top" : Y
+            })
+            .append($(document.createElement("label"))
+                .text("改变填充多少：")
+                .css({
+                    "position" : "relative",
+                    "top":"10px"
+                })
+            )
+            .append($(document.createElement("input"))
+                    .addClass("bwc_change_F")
+                    .attr({
+                        "type":"range",
+                        "max":"100",
+                        "min":"0",
+                        "step":"1",
+                        "value":(100-rule.exec($(this).find($(".bwc_bottle_up_in")).css("height"))[0])+(100-rule.exec($(this).find($(".bwc_bottle_body_in")).css("height"))[0])
+                    })
+                )
+
+        )
+
+    });
+    $(".bwc_change_F").change(function () {
+        switcher.bwc_ChangeBottleFilled(rule.exec((this).value)[0]);
+    })
+});
+ */

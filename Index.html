@@ -23,7 +23,7 @@
 <div style="margin-bottom: 20px;">
     <div style="width: 40%;padding-left:8vw;font-size: 3vw;color: #66ccff;">A colorful bottle</div>
     <div style="width: 40%;padding-left:18vw;">
-<div class="bwc_bottle">
+<div class="bwc_bottle" id="header">
     <div class="Bwc bwc_bottle_up"><span class="bwc_bottle_up_in" name="bwc_bottle_up_in"></span></div>
     <div class="Bwc bwc_bottle_body"><span class="bwc_bottle_body_in" name="bwc_bottle_body_in"></span></div>
 </div>
@@ -31,7 +31,7 @@
 </div>
 
 <div class="container">
-    <div class="text">我们可以自主添加瓶子，你只需要要输入以下name在div中</div>
+    <div class="text">我们可以自主添加瓶子，你只需要要输入以下name在div中（注意：自动添加的没有id，请自行添加）</div>
     <div class="code">&lt;div name="bottle_here">&lt;/div></div>
     <div class="text">如果你需要动态添加，只需要使用js添加以上代码在你要添加的位置，并执行以下代码;我们建议你一次性添加所有位置再运行</div>
     <div class="code">bwc_AddBottle()</div>
@@ -62,5 +62,6 @@
         <div class="code">$("id").ChangeAll(border_color,up_deg,up_color,body_deg,body_color,width,height,number)</div>
 </div>
 </div>
+
 </body>
 </html>
