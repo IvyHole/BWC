@@ -1,113 +1,142 @@
-$(function () {
-    $("div[name='bottle_here']")
-        .append($(document.createElement("div"))
-            .append($(document.createElement("span"))
 
-                .attr("name","bottle_up_in")
-                .addClass("bottle_up_in")
-            )
-            .addClass("Bwc bottle_up")
-        )
-        .append($(document.createElement("div"))
-            .append($(document.createElement("span"))
-                .attr("name","bottle_body_in")
-                .addClass("bottle_body_in")
-            )
-            .addClass("Bwc bottle_body")
-        )
-        .addClass("bottle")
-
-
-    $.fn.AddBottle = function(){
+function bwc_AddBottle(){
+    $(function () {
         var bottles = new Array();
         $("div[name='bottle_here']").each(function(key){
             bottles[key] = $(this);
         });
         for(var i=0;i<bottles.length;i++) {
-            if(bottles[i].attr("class") !== "bottle"){
+            if(bottles[i].attr("class") !== "bwc_bottle"){
                 bottles[i].append($(document.createElement("div"))
                     .append($(document.createElement("span"))
 
-                        .attr("name","bottle_up_in")
-                        .addClass("bottle_up_in")
+                        .attr("name","bwc_bottle_up_in")
+                        .addClass("bwc_bottle_up_in")
                     )
-                    .addClass("Bwc bottle_up")
+                    .addClass("Bwc bwc_bottle_up")
                 )
                     .append($(document.createElement("div"))
                         .append($(document.createElement("span"))
-                            .attr("name","bottle_body_in")
-                            .addClass("bottle_body_in")
+                            .attr("name","bwc_bottle_body_in")
+                            .addClass("bwc_bottle_body_in")
                         )
-                        .addClass("Bwc bottle_body")
+                        .addClass("Bwc bwc_bottle_body")
                     )
-                    .addClass("bottle")
+                    .addClass("bwc_bottle")
                     .attr("id","bottle"+i);
             }
         }
+    })
+}
+
+$(function () {
+    $("div[name='bottle_here']")
+        .append($(document.createElement("div"))
+            .append($(document.createElement("span"))
+
+                .attr("name","bwc_bottle_up_in")
+                .addClass("bwc_bottle_up_in")
+            )
+            .addClass("Bwc bwc_bottle_up")
+        )
+        .append($(document.createElement("div"))
+            .append($(document.createElement("span"))
+                .attr("name","bwc_bottle_body_in")
+                .addClass("bwc_bottle_body_in")
+            )
+            .addClass("Bwc bwc_bottle_body")
+        )
+        .addClass("bottle");
+
+
+    $.fn.bwc_AddBottleTo = function(id){
+            if(this.attr("class") !== "bwc_bottle"){
+                this.append($(document.createElement("div"))
+                    .append($(document.createElement("span"))
+
+                        .attr("name","bwc_bottle_up_in")
+                        .addClass("bwc_bottle_up_in")
+                    )
+                    .addClass("Bwc bwc_bottle_up")
+                )
+                    .append($(document.createElement("div"))
+                        .append($(document.createElement("span"))
+                            .attr("name","bwc_bottle_body_in")
+                            .addClass("bwc_bottle_body_in")
+                        )
+                        .addClass("Bwc bwc_bottle_body")
+                    )
+                    .addClass("bwc_bottle")
+                    .attr("id",id);
+            }
+
     };
 
-    $.fn.ChangeBorderColor = function (color) {
-        $(".Bwc").css("border-color",color);
+    $.fn.bwc_ChangeBorderColor = function (color) {
+        $(this).children(".Bwc").css("border-color",color);
     }
 
-    $.fn.ChangeBottleUpColor = function (deg,color) {
+    $.fn.bwc_ChangeBottleUpColor = function (deg,color) {
+        var bwc_up = $(this).children(".bwc_bottle_up");
         if(deg !== "null"){
-            $(".bottle_up").css({
+            bwc_up.css({
                 "background-image":"linear-gradient("+deg+"deg,"+color+")"
             })
         }else{
-            $(".bottle_up").css("background-color",color);
+            bwc_up.css("background-color",color);
         }
     };
-    $.fn.ChangeBottleBodyColor = function (deg,color) {
+    $.fn.bwc_ChangeBottleBodyColor = function (deg,color) {
+        var bwc_body = $(this).children(".bwc_bottle_body");
         if(deg !== "null"){
-            $(".bottle_body").css("background-image","linear-gradient("+deg+"deg,"+color+")")
+            bwc_body.css("background-image","linear-gradient("+deg+"deg,"+color+")")
         }else{
-            $(".bottle_body").css("background-color",color);
+            bwc_body.css("background-color",color);
         }
     };
 
-    $.fn.ChangeBottleWAndH =function(Iv_width,Iv_height){
-        $(".bottle").css({
+    $.fn.bwc_ChangeBottleWAndH =function(Iv_width,Iv_height){
+        $(this).css({
             "width":Iv_width,
             "height":Iv_height
         });
-        $(".bottle_up").css({
+        $(this).children(".bwc_bottle_up").css({
             "width":Iv_width-Iv_width*0.24,
             "height":Iv_height*0.25
         });
-        $(".bottle_body").css({
+        $(this).children(".bwc_bottle_body").css({
             "width":Iv_width,
             "height":Iv_height*0.75
-        })
+        });
+        $(this).find($(".bwc_bottle_body_in")).css("border-radius", "0 0 "+Iv_height*0.19+"px "+Iv_height*0.06+"px")
     };
 
-    $.fn.ChangeBottleFilled = function(number){
+    $.fn.bwc_ChangeBottleFilled = function(number){
 
         if(number>75){
-            $(".bottle_body_in").css("height","0%");
-            $(".bottle_up_in").css("height",(100-number)*4+"%");
+            $(this).find($(".bwc_bottle_body_in")).css("height","0%");
+            $(this).find($(".bwc_bottle_up_in")).css("height",(100-number)*4+"%");
       }else if(number<75){
-            $(".bottle_up_in").css("height","100%");
-            $(".bottle_body_in").css("height",(75-number)*4/3+"%");
+            $(this).find($(".bwc_bottle_up_in")).css("height","100%");
+            $(this).find($(".bwc_bottle_body_in")).css("height",(75-number)*4/3+"%");
         }else if(number===75){
-            $(".bottle_up_in").css("height","100%");
-            $(".bottle_body_in").css("height","0%");
+            $(this).find($(".bwc_bottle_up_in")).css("height","100%");
+            $(this).find($(".bwc_bottle_body_in")).css("height","0%");
         }else if(number === 100){
-            $(".bottle_body_in").css("height","0%");
-            $(".bottle_up_in").css("height","0%");
+            $(this).find($(".bwc_bottle_body_in")).css("height","0%");
+            $(this).find($(".bwc_bottle_up_in")).css("height","0%");
         }else if(number===0) {
-            $(".bottle_body_in").css("height","100%");
-            $(".bottle_up_in").css("height","100%");
+            $(this).find($(".bwc_bottle_body_in")).css("height","100%");
+            $(this).find($(".bwc_bottle_up_in")).css("height","100%");
 
         }
     };
 
-    $.fn.ChangeAll = function(border_color,up_deg,up_color,body_deg,body_color,Iv_width,Iv_height,number){
-        $().ChangeBorderColor(border_color);
-        $().ChangeBottleUpColor(up_deg,up_color);
-        $().ChangeBottleBodyColor(body_deg,body_color);
-        $().ChangeBottleWAndH(Iv_width,Iv_height);
-        $().ChangeBottleFilled(number);
+    $.fn.bwc_ChangeAll = function(border_color,up_deg,up_color,body_deg,body_color,Iv_width,Iv_height,number){
+        $(this).bwc_ChangeBorderColor(border_color);
+        $(this).bwc_ChangeBottleUpColor(up_deg,up_color);
+        $(this).bwc_ChangeBottleBodyColor(body_deg,body_color);
+        $(this).bwc_ChangeBottleWAndH(Iv_width,Iv_height);
+        $(this).bwc_ChangeBottleFilled(number);
     }
 });

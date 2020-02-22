@@ -5,13 +5,13 @@ div.Bwc{
     border: solid;
     border-color: #000000;
 }
-div.bottle{
+div.bwc_bottle{
     width: 50px;
     height: 80px;
     text-align: center;
     line-height: 0;
 }
-div.bottle_up{
+div.bwc_bottle_up{
 
     border-width: 3px 4px 0 4px;
     border-radius: 10px 10px 5px 5px;
@@ -20,13 +20,13 @@ div.bottle_up{
     background-image: linear-gradient(60deg,#2E86C1, #F4D03F, #E74C3C);
     background-color: #66ccff;
 }
-span.bottle_up_in{
+span.bwc_bottle_up_in{
     height: 100%;
     display: block;
     background-image: linear-gradient(#F8F9F9,#FBFCFC);
     background-color: #F8F9F9;
 }
-div.bottle_body{
+div.bwc_bottle_body{
     border-width: 0 4px 5px 4px;
     border-radius: 15px 15px 10px 10px;
     width: 50px;
@@ -34,7 +34,7 @@ div.bottle_body{
     background-image: linear-gradient(60deg,#2E86C1, #F4D03F, #E74C3C);
     background-color: #66ccff;
 }
-span.bottle_body_in{
+span.bwc_bottle_body_in{
     height: 60%;
     display: block;
     background-image: linear-gradient(#F8F9F9,#FBFCFC);
